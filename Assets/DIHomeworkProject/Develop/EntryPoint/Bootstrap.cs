@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.DIHomeworkProject.Develop.CommonServices.LoadingScreen;
+using System;
 using System.Collections;
 using UnityEngine;
 namespace Assets.DIHomeworkProject.Develop.EntryPoint
@@ -7,10 +8,10 @@ namespace Assets.DIHomeworkProject.Develop.EntryPoint
     {
         public IEnumerator Run(DIContainer container)
         {
-            //ILoadingCurrtain loadingCurrtain = container.Resolve<ILoadingCurrtain>();
+            ILoadingCurtain loadingCurtain = container.Resolve<ILoadingCurtain>();
             //SceneSwitcher sceneSwitcher = container.Resolve<SceneSwitcher>();
 
-            //loadingCurrtain.Show();
+            loadingCurtain.Show();
 
             Debug.Log("Run services initialization");
 
@@ -24,7 +25,7 @@ namespace Assets.DIHomeworkProject.Develop.EntryPoint
 
             Debug.Log("Services initialization is done");
 
-            //loadingCurrtain.Hide();
+            loadingCurtain.Hide();
 
             //sceneSwitcher.ProcessSwitchSceneFor(new OutputBootstrapArgs(new MainMenuInputArgs()));
         }
